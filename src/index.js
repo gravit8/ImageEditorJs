@@ -34,6 +34,7 @@
  * @typedef {object} ImageToolData
  * @description Image Tool's input and output data format
  * @property {string} caption — image caption
+ * @property {string} class — image class
  * @property {boolean} withBorder - should image be rendered with border
  * @property {boolean} withBackground - should image be rendered with background
  * @property {boolean} stretched - should image be stretched to full width of container
@@ -196,8 +197,10 @@ export default class ImageTool {
    */
   save() {
     const caption = this.ui.nodes.caption;
+    const imageClass = this.ui.nodes.imageClass;
 
     this._data.caption = caption.innerHTML;
+    this._data.imageClass = imageClass.innerHTML;
 
     return this.data;
   }
@@ -309,7 +312,9 @@ export default class ImageTool {
     this.image = data.file;
 
     this._data.caption = data.caption || '';
+    this._data.imageClass = data.imageClass || '';
     this.ui.fillCaption(this._data.caption);
+    this.ui.fillImageClass(this._data.imageClass);
 
     Tunes.tunes.forEach(({ name: tune }) => {
       const value = typeof data[tune] !== 'undefined' ? data[tune] === true || data[tune] === 'true' : false;

@@ -28,6 +28,9 @@ export default class Ui {
       caption: make('div', [this.CSS.input, this.CSS.caption], {
         contentEditable: !this.readOnly,
       }),
+      imageClass: make('div', [this.CSS.input, this.CSS.imageClass], {
+        contentEditable: !this.readOnly,
+      }),
     };
 
     /**
@@ -44,6 +47,7 @@ export default class Ui {
     this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
     this.nodes.wrapper.appendChild(this.nodes.imageContainer);
     this.nodes.wrapper.appendChild(this.nodes.caption);
+    this.nodes.wrapper.appendChild(this.nodes.imageClass);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
   }
 
@@ -67,6 +71,7 @@ export default class Ui {
       imagePreloader: 'image-tool__image-preloader',
       imageEl: 'image-tool__image-picture',
       caption: 'image-tool__caption',
+      imageClass: 'image-tool__caption',
     };
   };
 
@@ -221,6 +226,18 @@ export default class Ui {
   fillCaption(text) {
     if (this.nodes.caption) {
       this.nodes.caption.innerHTML = text;
+    }
+  }
+
+  /**
+   * Shows imageClass input
+   *
+   * @param {string} text - caption text
+   * @returns {void}
+   */
+  fillImageClass(text) {
+    if (this.nodes.imageClass) {
+      this.nodes.imageClass.innerHTML = text;
     }
   }
 
