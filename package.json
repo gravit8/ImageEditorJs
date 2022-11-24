@@ -13,6 +13,7 @@
   "repository": "https://github.com/editor-js/image",
   "main": "./dist/bundle.js",
   "scripts": {
+    "prepare": "npm run build",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch",
     "lint": "eslint src/ --ext .js",
