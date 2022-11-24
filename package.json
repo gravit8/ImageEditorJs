@@ -10,7 +10,7 @@
   ],
   "description": "Image Tool for Editor.js",
   "license": "MIT",
-  "repository": "https://github.com/editor-js/image",
+  "repository": "https://github.com/gravit8/ImageEditorJs/",
   "main": "./dist/bundle.js",
   "scripts": {
     "prepare": "npm run build",
@@ -21,8 +21,8 @@
     "lint:fix": "eslint src/ --ext .js --fix"
   },
   "author": {
-    "name": "CodeX",
-    "email": "team@ifmo.su"
+    "name": "Dan",
+    "email": "dan@n3t.dev"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
